@@ -32,10 +32,6 @@ DEBUG = os.getenv('DEBUG', 'True').lower() in ('true', '1', 't')
 # Разрешенные хосты
 ALLOWED_HOSTS = ['lift.lordx.uz', '127.0.0.1', 'localhost']
 
-# Доверенные источники для CSRF (обязательно с протоколом https)
-CSRF_TRUSTED_ORIGINS = [
-    'https://lift.lordx.uz',
-]
 INSTALLED_APPS = [
     'jazzmin',
     'django.contrib.admin',
@@ -156,6 +152,11 @@ CSRF_TRUSTED_ORIGINS = [
     "https://lift.lordx.uz",
     "http://lift.lordx.uz",
 ]
+
+# Настройки безопасности для SSL за прокси
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# CSRF_COOKIE_SECURE = True # Раскомментируйте если используете только HTTPS
+# SESSION_COOKIE_SECURE = True
 
 # Telegram Bot
 TG_BOT_TOKEN = os.getenv('TG_BOT_TOKEN')
