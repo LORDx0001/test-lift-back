@@ -157,7 +157,7 @@ CSRF_TRUSTED_ORIGINS = [
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # CSRF_COOKIE_SECURE = True # Раскомментируйте если используете только HTTPS
 # SESSION_COOKIE_SECURE = True
-
+SECURE_SSL_REDIRECT = False
 # Telegram Bot
 TG_BOT_TOKEN = os.getenv('TG_BOT_TOKEN')
 TG_CHAT_ID = os.getenv('TG_CHAT_ID')
