@@ -20,7 +20,7 @@ class Command(BaseCommand):
 
         # 1. GeneralSetting
         if not GeneralSetting.objects.exists():
-            gen = GeneralSetting.objects.create(brand_name='Osten')
+            gen = GeneralSetting.objects.create(brand_name='Lift test')
             gen.navbar_logo.save('logo.gif', dummy_image)
             gen.footer_logo.save('footer_logo.gif', dummy_image)
             self.stdout.write('GeneralSetting created.')
@@ -28,9 +28,9 @@ class Command(BaseCommand):
         # 2. HeroSection
         if not HeroSection.objects.exists():
             HeroSection.objects.create(
-                mini_title_uz="OSTEN - SIFAT VA ISHONCH",
-                mini_title_ru="OSTEN - КАЧЕСТВО И НАДЕЖНОСТЬ",
-                mini_title_en="OSTEN - QUALITY AND RELIABILITY",
+                mini_title_uz="Lift test - SIFAT VA ISHONCH",
+                mini_title_ru="Lift test - КАЧЕСТВО И НАДЕЖНОСТЬ",
+                mini_title_en="Lift test - QUALITY AND RELIABILITY",
                 title_uz="BINOINGIZ UCHUN\nMUKAMMAL\nLIFTLAR",
                 title_ru="СОВЕРШЕННЫЕ\nЛИФТЫ ДЛЯ\nВАШЕГО ЗДАНИЯ",
                 title_en="PERFECT\nLIFTS FOR\nYOUR BUILDING",
@@ -166,7 +166,7 @@ class Command(BaseCommand):
             self.stdout.write('PhoneNumber created.')
 
         if not EmailAddress.objects.exists():
-            EmailAddress.objects.create(email="info@osten.uz")
+            EmailAddress.objects.create(email="[EMAIL_ADDRESS]")
             self.stdout.write('EmailAddress created.')
 
         self.stdout.write(self.style.SUCCESS('Successfully seeded database'))

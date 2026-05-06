@@ -17,7 +17,7 @@ class Command(BaseCommand):
         GeneralSetting.objects.update_or_create(
             id=1,
             defaults={
-                'brand_name': 'OSTEN',
+                'brand_name': 'Lift test',
                 'navbar_logo': 'logos/logo.gif',
                 'footer_logo': 'logos/footer_logo.gif',
             }
@@ -193,7 +193,7 @@ class Command(BaseCommand):
         PhoneNumber.objects.get_or_create(number='+998 71 200 00 00')
 
         # 11. Email Addresses
-        EmailAddress.objects.get_or_create(email='info@osten.uz')
-        EmailAddress.objects.get_or_create(email='sales@osten.uz')
+        EmailAddress.objects.get_or_create(email='[EMAIL_ADDRESS]')
+        EmailAddress.objects.get_or_create(email='[EMAIL_ADDRESS]')
 
         self.stdout.write(self.style.SUCCESS('Successfully seeded data!'))

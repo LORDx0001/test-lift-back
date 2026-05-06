@@ -1,7 +1,7 @@
 from django.db import models
 
 class GeneralSetting(models.Model):
-    brand_name = models.CharField(max_length=255, default="Osten", verbose_name="Название бренда (Текст)")
+    brand_name = models.CharField(max_length=255, default="Lift test", verbose_name="Название бренда (Текст)")
     navbar_logo = models.ImageField(upload_to="logos/", blank=True, null=True, verbose_name="Логотип Navbar")
     footer_logo = models.ImageField(upload_to="logos/", blank=True, null=True, verbose_name="Логотип Footer")
     

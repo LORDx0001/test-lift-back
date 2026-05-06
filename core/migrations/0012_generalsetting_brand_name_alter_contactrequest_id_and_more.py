@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='generalsetting',
             name='brand_name',
-            field=models.CharField(default='Osten', max_length=255, verbose_name='Название бренда (Текст)'),
+            field=models.CharField(default='Lift test', max_length=255, verbose_name='Название бренда (Текст)'),
         ),
         migrations.AlterField(
             model_name='contactrequest',

@@ -1,0 +1,81 @@
+/* Custom Jazzmin Admin Theme for Lift test */
+
+:root {
+  --color-graphite: #2c2c2c;
+  --color-steel-blue: #0056b3;
+  --color-safety-orange: #ff6600;
+}
+
+/* Sidebar overrides */
+.sidebar-dark-primary {
+  background-color: var(--color-graphite) !important;
+}
+.brand-link {
+  background-color: var(--color-graphite) !important;
+  color: #fff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Navbar */
+.navbar-white, .navbar-light {
+  background-color: #fff !important;
+  border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+/* Active links */
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
+.sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+  background-color: var(--color-steel-blue) !important;
+  color: #fff !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-steel-blue) !important;
+  border-color: var(--color-steel-blue) !important;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #004494 !important;
+  border-color: #004494 !important;
+}
+
+/* Use orange for secondary/warning actions */
+.btn-secondary, .btn-warning, .btn-info {
+  background-color: var(--color-safety-orange) !important;
+  border-color: var(--color-safety-orange) !important;
+  color: #fff !important;
+}
+.btn-secondary:hover, .btn-warning:hover, .btn-info:hover {
+  background-color: #e65c00 !important;
+  border-color: #e65c00 !important;
+  color: #fff !important;
+}
+
+/* Login page background */
+.login-page {
+  background-color: #f4f6f9 !important;
+  background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.03) 1px, transparent 0) !important;
+  background-size: 30px 30px !important;
+}
+.login-card-body {
+  border-top: 4px solid var(--color-steel-blue);
+  border-radius: 4px;
+}
+.login-logo a {
+  color: var(--color-graphite) !important;
+  font-weight: bold;
+}
+
+/* Links */
+a {
+  color: var(--color-steel-blue);
+}
+a:hover {
+  color: var(--color-safety-orange);
+}
+
+/* Form controls focus */
+.form-control:focus {
+  border-color: var(--color-steel-blue) !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25) !important;
+}
