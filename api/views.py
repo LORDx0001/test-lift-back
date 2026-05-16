@@ -32,7 +32,7 @@ class PageDataView(APIView):
 
         return Response({
             'general': GeneralSettingSerializer(general, context={'request': request}).data if general else None,
-            'hero': HeroSectionSerializer(hero).data if hero else None,
+            'hero': HeroSectionSerializer(hero, context={'request': request}).data if hero else None,
             'experience': ExperienceSectionSerializer(experience).data if experience else None,
             'service': ServiceSectionSerializer(service).data if service else None,
             'gallery': GallerySectionSerializer(gallery).data if gallery else None,
@@ -53,6 +53,11 @@ class ServiceCardDetailAPIView(generics.RetrieveAPIView):
     queryset = ServiceCard.objects.all()
     serializer_class = ServiceCardSerializer
     lookup_field = 'slug'
+
+class SettingsAPIView(APIView):
+    def get(self, request):
+        general = GeneralSetting.objects.first()
+        return Response(GeneralSettingSerializer(general, context={'request': request}).data if general else {})
 
 from django.conf import settings
 
