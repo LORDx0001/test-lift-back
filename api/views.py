@@ -45,6 +45,15 @@ class PageDataView(APIView):
             'emails': EmailAddressSerializer(emails, many=True).data,
         })
 
+class ServiceCardListAPIView(generics.ListAPIView):
+    queryset = ServiceCard.objects.all()
+    serializer_class = ServiceCardSerializer
+
+class ServiceCardDetailAPIView(generics.RetrieveAPIView):
+    queryset = ServiceCard.objects.all()
+    serializer_class = ServiceCardSerializer
+    lookup_field = 'slug'
+
 from django.conf import settings
 
 class ContactRequestCreateView(generics.CreateAPIView):

@@ -125,13 +125,26 @@ class ExperienceCard(models.Model):
         return self.title_ru
 
 class ServiceCard(models.Model):
-    icon = models.ImageField(upload_to="services/", verbose_name="Иконка (Image)")
+    slug = models.SlugField(unique=True, null=True, blank=True, verbose_name="Slug (URL)")
+    icon = models.CharField(max_length=100, blank=True, null=True, verbose_name="ID Иконки (например: lift, special, escalator, supervision)")
+    image = models.ImageField(upload_to="services_photos/", null=True, blank=True, verbose_name="Фото услуги")
+    
     title_uz = models.CharField(max_length=255, verbose_name="Заголовок (UZ)")
     title_ru = models.CharField(max_length=255, verbose_name="Заголовок (RU)")
-    title_en = models.CharField(max_length=255, verbose_name="Заголовок (EN)")
-    desc_uz = models.TextField(verbose_name="Описание (UZ)")
-    desc_ru = models.TextField(verbose_name="Описание (RU)")
-    desc_en = models.TextField(verbose_name="Описание (EN)")
+    title_en = models.CharField(max_length=255, verbose_name="Заголовок (EN)", blank=True, null=True)
+    
+    desc_uz = models.TextField(verbose_name="Краткое описание (UZ)", blank=True, null=True)
+    desc_ru = models.TextField(verbose_name="Краткое описание (RU)", blank=True, null=True)
+    desc_en = models.TextField(verbose_name="Краткое описание (EN)", blank=True, null=True)
+
+    full_desc_uz = models.TextField(verbose_name="Полное описание (UZ)", blank=True, null=True)
+    full_desc_ru = models.TextField(verbose_name="Полное описание (RU)", blank=True, null=True)
+    
+    features_uz = models.TextField(verbose_name="Виды работ (UZ) [каждый с новой строки]", blank=True, null=True)
+    features_ru = models.TextField(verbose_name="Виды работ (RU) [каждый с новой строки]", blank=True, null=True)
+    
+    steps_uz = models.TextField(verbose_name="Этапы (UZ) [каждый с новой строки]", blank=True, null=True)
+    steps_ru = models.TextField(verbose_name="Этапы (RU) [каждый с новой строки]", blank=True, null=True)
 
     class Meta:
         verbose_name = "Карточка Услуги"
