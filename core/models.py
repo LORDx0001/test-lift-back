@@ -139,12 +139,15 @@ class ServiceCard(models.Model):
 
     full_desc_uz = models.TextField(verbose_name="Полное описание (UZ)", blank=True, null=True)
     full_desc_ru = models.TextField(verbose_name="Полное описание (RU)", blank=True, null=True)
+    full_desc_en = models.TextField(verbose_name="Полное описание (EN)", blank=True, null=True)
     
     features_uz = models.TextField(verbose_name="Виды работ (UZ) [каждый с новой строки]", blank=True, null=True)
     features_ru = models.TextField(verbose_name="Виды работ (RU) [каждый с новой строки]", blank=True, null=True)
+    features_en = models.TextField(verbose_name="Виды работ (EN) [каждый с новой строки]", blank=True, null=True)
     
     steps_uz = models.TextField(verbose_name="Этапы (UZ) [каждый с новой строки]", blank=True, null=True)
     steps_ru = models.TextField(verbose_name="Этапы (RU) [каждый с новой строки]", blank=True, null=True)
+    steps_en = models.TextField(verbose_name="Этапы (EN) [каждый с новой строки]", blank=True, null=True)
 
     class Meta:
         verbose_name = "Карточка Услуги"
